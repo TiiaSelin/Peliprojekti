@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bto2uwkcee1bu"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_dosvn"]
+[ext_resource type="Texture2D" uid="uid://bnr72cim65ls3" path="res://assets/images/mushroom.png" id="2_6ik14"]
+[ext_resource type="PackedScene" uid="uid://bpjvl4gwiq4pc" path="res://scenes/gun.tscn" id="3_gyfc5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pkjvo"]
+radius = 37.054
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dosvn")
+
+[node name="Mushroom" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(0.0807793, 0.0837776)
+texture = ExtResource("2_6ik14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 13)
+shape = SubResource("CircleShape2D_pkjvo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_gyfc5")]
+unique_name_in_owner = true
+position = Vector2(49, 36)
