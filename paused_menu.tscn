@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://wljcdsrx0cxg"]
+
+[ext_resource type="Script" path="res://paused_menu.gd" id="1_7xp5u"]
+
+[sub_resource type="SystemFont" id="SystemFont_y41mi"]
+font_names = PackedStringArray("OCR A")
+font_weight = 500
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_ex76j"]
+font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
+
+[node name="PausedMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xp5u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.815686, 0.780392, 0.803922, 0.831373)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 15
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_y41mi")
+theme_override_font_sizes/font_size = 48
+text = "PAUSED"
+
+[node name="resume" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_ex76j")
+theme_override_font_sizes/font_size = 22
+text = "RESUME 
+"
+
+[node name="settings" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_ex76j")
+theme_override_font_sizes/font_size = 22
+text = "SETTINGS"
+
+[node name="quit" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_ex76j")
+theme_override_font_sizes/font_size = 22
+text = "QUIT GAME
+"
+
+[connection signal="pressed" from="GridContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="GridContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]

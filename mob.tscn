@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://1urwapxgwkiu"]
+
+[ext_resource type="Texture2D" uid="uid://b4rxfl3u366ap" path="res://images/bomb.png" id="1_efybq"]
+[ext_resource type="Script" path="res://mob.gd" id="1_syyuc"]
+[ext_resource type="Script" path="res://enemy.gd" id="2_7iqa2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36wml"]
+radius = 531.069
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_syyuc")
+
+[node name="enemy" type="Sprite2D" parent="."]
+position = Vector2(-1, 2)
+scale = Vector2(0.0671406, 0.0671406)
+texture = ExtResource("1_efybq")
+script = ExtResource("2_7iqa2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 7)
+scale = Vector2(0.0774092, 0.0774092)
+shape = SubResource("CircleShape2D_36wml")
