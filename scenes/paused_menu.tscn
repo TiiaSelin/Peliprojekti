@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://wljcdsrx0cxg"]
 
-[ext_resource type="Script" path="res://paused_menu.gd" id="1_7xp5u"]
+[ext_resource type="Script" path="res://scripts/paused_menu.gd" id="1_7xp5u"]
 
 [sub_resource type="SystemFont" id="SystemFont_y41mi"]
 font_names = PackedStringArray("OCR A")

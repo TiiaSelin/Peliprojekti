@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2x1tu76xsq4f"
-path="res://.godot/imported/background_image.jpg-75c874ade469c48c833b9c4b8ba1bfd4.ctex"
+uid="uid://bnr72cim65ls3"
+path="res://.godot/imported/mushroom.png-99edd786dfe508b2691018661063269a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/background_image.jpg"
-dest_files=["res://.godot/imported/background_image.jpg-75c874ade469c48c833b9c4b8ba1bfd4.ctex"]
+source_file="res://assets/images/mushroom.png"
+dest_files=["res://.godot/imported/mushroom.png-99edd786dfe508b2691018661063269a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbyyfhkq0g2va"
-path="res://.godot/imported/mushroombackground3.png-bc9c925a1df6a1f6a14596e805fcf32a.ctex"
+uid="uid://5olcgy762nnn"
+path="res://.godot/imported/revolver.png-0a8b541cd4e0b7ceff82e6b8c566814e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/mushroombackground3.png"
-dest_files=["res://.godot/imported/mushroombackground3.png-bc9c925a1df6a1f6a14596e805fcf32a.ctex"]
+source_file="res://assets/images/revolver.png"
+dest_files=["res://.godot/imported/revolver.png-0a8b541cd4e0b7ceff82e6b8c566814e.ctex"]
 
 [params]
 

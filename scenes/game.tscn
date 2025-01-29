@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8spnlsdpdl1d"]
+
+[ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="1_eaiag"]
+[ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="2_d2ej0"]
+[ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="2_gbf53"]
+[ext_resource type="PackedScene" uid="uid://1urwapxgwkiu" path="res://scenes/mob.tscn" id="3_jc374"]
+
+[node name="Game" type="Node2D"]
+process_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -12
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_eaiag")
+expand_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_gbf53")]
+position = Vector2(574, 314)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("2_d2ej0")]
+
+[node name="Mobs" type="Node" parent="."]
+
+[node name="Mob" parent="Mobs" instance=ExtResource("3_jc374")]
+position = Vector2(857, 222)
+
+[node name="Mob2" parent="Mobs" instance=ExtResource("3_jc374")]
+position = Vector2(248, 112)
+
+[node name="Mob3" parent="Mobs" instance=ExtResource("3_jc374")]
+position = Vector2(223, 380)

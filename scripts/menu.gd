@@ -5,7 +5,7 @@ extends Control
 
 @onready var PlayButton = $MarginContainer/HBoxContainer/VBoxContainer/PlayButton as Button
 @onready var ExitButton = $MarginContainer/HBoxContainer/VBoxContainer/ExitButton as Button
-@onready var starting_level = preload("res://game.tscn") #Ladataan pelin aloitustaso
+@onready var starting_level = preload("res://scenes/game.tscn") #Ladataan pelin aloitustaso
 
 
 func _ready() -> void:
