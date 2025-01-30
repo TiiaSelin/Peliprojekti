@@ -8,6 +8,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
 
 [node name="Game" type="Node2D"]
 process_mode = 1
