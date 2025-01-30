@@ -40,6 +40,7 @@ position = Vector2(574, 314)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("2_d2ej0")]
+unique_name_in_owner = true
 
 [node name="Mobs" type="Node" parent="."]
 
