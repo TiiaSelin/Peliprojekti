@@ -42,7 +42,7 @@ shape = SubResource("CircleShape2D_pkjvo")
 
 [node name="Gun" parent="." instance=ExtResource("3_gyfc5")]
 unique_name_in_owner = true
-position = Vector2(49, 36)
+position = Vector2(54, 35)
 
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
