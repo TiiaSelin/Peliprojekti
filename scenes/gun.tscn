@@ -24,16 +24,9 @@ shape = SubResource("CircleShape2D_b513g")
 [node name="WeaponPivot" type="Marker2D" parent="CollisionShape2D"]
 position = Vector2(2, -1)
 rotation = 0.0637522
-scale = Vector2(1, 1)
 
 [node name="revolver" type="Sprite2D" parent="CollisionShape2D/WeaponPivot"]
 position = Vector2(3.8147e-06, 0)
 rotation = -0.0299723
 scale = Vector2(0.0464796, 0.0464796)
 texture = ExtResource("2_lk2s4")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.635
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
