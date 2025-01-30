@@ -24,5 +24,3 @@ func _physics_process(delta: float) -> void:
 			health_depleted.emit()
 			
 	
-	
-	

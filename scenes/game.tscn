@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8spnlsdpdl1d"]
+[gd_scene load_steps=7 format=3 uid="uid://b8spnlsdpdl1d"]
 
 [ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="1_eaiag"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_xgjno"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="2_d2ej0"]
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="2_gbf53"]
 [ext_resource type="PackedScene" uid="uid://1urwapxgwkiu" path="res://scenes/mob.tscn" id="3_jc374"]
 
+[sub_resource type="SystemFont" id="SystemFont_cbach"]
+font_names = PackedStringArray("OCR A")
+
 [node name="Game" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_xgjno")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -12
@@ -45,3 +50,43 @@ position = Vector2(248, 112)
 
 [node name="Mob3" parent="Mobs" instance=ExtResource("3_jc374")]
 position = Vector2(223, 380)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.298039, 0.298039, 0.298039, 0.713726)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_cbach")
+theme_override_font_sizes/font_size = 60
+text = "GAME OVER"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
