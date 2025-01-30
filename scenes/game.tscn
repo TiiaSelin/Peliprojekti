@@ -43,13 +43,13 @@ position = Vector2(574, 314)
 [node name="Mobs" type="Node" parent="."]
 
 [node name="Mob" parent="Mobs" instance=ExtResource("3_jc374")]
-position = Vector2(857, 222)
+position = Vector2(1062, 3)
 
 [node name="Mob2" parent="Mobs" instance=ExtResource("3_jc374")]
-position = Vector2(248, 112)
+position = Vector2(143, 6)
 
 [node name="Mob3" parent="Mobs" instance=ExtResource("3_jc374")]
-position = Vector2(223, 380)
+position = Vector2(24, 404)
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
