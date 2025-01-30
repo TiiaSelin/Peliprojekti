@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8spnlsdpdl1d"]
+[gd_scene load_steps=6 format=3 uid="uid://b8spnlsdpdl1d"]
 
 [ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="1_eaiag"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="2_d2ej0"]
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="2_gbf53"]
 [ext_resource type="PackedScene" uid="uid://1urwapxgwkiu" path="res://scenes/mob.tscn" id="3_jc374"]
+[ext_resource type="AudioStream" uid="uid://b3dsbfi5uxeid" path="res://audio/Taustamusa.wav" id="5_6koa6"]
 
 [node name="Game" type="Node2D"]
 process_mode = 1
@@ -45,3 +46,6 @@ position = Vector2(143, 6)
 
 [node name="Mob3" parent="Mobs" instance=ExtResource("3_jc374")]
 position = Vector2(24, 404)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_6koa6")

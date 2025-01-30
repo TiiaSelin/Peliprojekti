@@ -1,8 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bto2uwkcee1bu"]
+[gd_scene load_steps=12 format=3 uid="uid://bto2uwkcee1bu"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dosvn"]
 [ext_resource type="Texture2D" uid="uid://bnr72cim65ls3" path="res://assets/images/mushroom.png" id="2_6ik14"]
 [ext_resource type="PackedScene" uid="uid://bpjvl4gwiq4pc" path="res://scenes/gun.tscn" id="3_gyfc5"]
+[ext_resource type="AudioStream" uid="uid://dq8qaci0r3bdl" path="res://audio/RevolveriAmmus.wav" id="4_5c2as"]
+[ext_resource type="AudioStream" uid="uid://b3dsbfi5uxeid" path="res://audio/Taustamusa.wav" id="4_etdw4"]
+[ext_resource type="AudioStream" uid="uid://bpgf7cj4skn7d" path="res://audio/PelaajaOsuma.wav" id="6_rye60"]
+[ext_resource type="AudioStream" uid="uid://dxdjygbgfk27f" path="res://audio/PelaajaKuolema.wav" id="7_24wrf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pkjvo"]
 radius = 37.054
@@ -44,6 +48,9 @@ shape = SubResource("CircleShape2D_pkjvo")
 unique_name_in_owner = true
 position = Vector2(49, 36)
 
+[node name="RevolveriAmmus" type="AudioStreamPlayer2D" parent="Gun"]
+stream = ExtResource("4_5c2as")
+
 [node name="HurtBox" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
@@ -64,3 +71,15 @@ theme_override_styles/background = SubResource("StyleBoxFlat_04oqh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x2mu8")
 value = 100.0
 show_percentage = false
+
+[node name="taustamusiikki" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_etdw4")
+volume_db = -14.362
+autoplay = true
+
+[node name="pelaajaOsumaÄäni" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_rye60")
+volume_db = -25.257
+
+[node name="pelaajaKuolemaÄäni" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_24wrf")

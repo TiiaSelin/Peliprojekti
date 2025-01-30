@@ -1,6 +1,6 @@
 extends Area2D
 
-
+@onready var ampuminen = $RevolveriAmmus
 
 func _physics_process(delta: float) -> void:
 	var enemies_in_range = get_overlapping_bodies()
@@ -17,6 +17,7 @@ func _input(event: InputEvent) -> void:
 			shoot()
 
 
+
 func shoot():
 	const projectile = preload("res://scenes/projectile.tscn")
 	
@@ -24,3 +25,5 @@ func shoot():
 	new_projectile.global_position = %ShootingPoint.global_position
 	new_projectile.global_rotation = %ShootingPoint.global_rotation
 	%ShootingPoint.add_child(new_projectile)
+	ampuminen.play() # Ampumisääni
+	
