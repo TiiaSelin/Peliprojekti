@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://bto2uwkcee1bu"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_dosvn"]
+[ext_resource type="Texture2D" uid="uid://bnr72cim65ls3" path="res://assets/images/mushroom.png" id="2_6ik14"]
+[ext_resource type="PackedScene" uid="uid://bpjvl4gwiq4pc" path="res://scenes/gun.tscn" id="3_gyfc5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pkjvo"]
+radius = 37.054
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0yqjv"]
+radius = 46.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04oqh"]
+bg_color = Color(0.25098, 0.27451, 0.321569, 0.764706)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2mu8"]
+bg_color = Color(0.188235, 0.764706, 0.270588, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_dosvn")
+
+[node name="Mushroom" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(0.0807793, 0.0837776)
+texture = ExtResource("2_6ik14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 13)
+shape = SubResource("CircleShape2D_pkjvo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_gyfc5")]
+unique_name_in_owner = true
+position = Vector2(49, 36)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(3, -1)
+shape = SubResource("CircleShape2D_0yqjv")
+debug_color = Color(0.75318, 0.424213, 0.464807, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -96.0
+offset_top = -114.0
+offset_right = 97.0
+offset_bottom = -82.0
+theme_override_styles/background = SubResource("StyleBoxFlat_04oqh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x2mu8")
+value = 100.0
+show_percentage = false
