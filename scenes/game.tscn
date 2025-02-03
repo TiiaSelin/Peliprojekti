@@ -40,6 +40,7 @@ position = Vector2(574, 314)
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("2_d2ej0")]
+unique_name_in_owner = true
 
 [node name="Mobs" type="Node" parent="."]
 
@@ -87,7 +88,7 @@ theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = SubResource("SystemFont_cbach")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 90
 text = "GAME OVER"
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
