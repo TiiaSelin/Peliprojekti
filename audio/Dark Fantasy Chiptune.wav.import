@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fr7sj0b55kvd"
+path="res://.godot/imported/Dark Fantasy Chiptune.wav-157d116f2728d2ba344c084a7e7b3e80.sample"
+
+[deps]
+
+source_file="res://audio/Dark Fantasy Chiptune.wav"
+dest_files=["res://.godot/imported/Dark Fantasy Chiptune.wav-157d116f2728d2ba344c084a7e7b3e80.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
