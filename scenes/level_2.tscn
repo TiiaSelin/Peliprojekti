@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://canjdd6c25ul2"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_wh6cu"]
+[ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_q74np"]
+[ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_0fo3i"]
+[ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_yd64k"]
+[ext_resource type="PackedScene" uid="uid://1urwapxgwkiu" path="res://scenes/mob.tscn" id="5_12bjj"]
+
+[sub_resource type="SystemFont" id="SystemFont_cbach"]
+font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
+
+[node name="Game" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_wh6cu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -12
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q74np")
+expand_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("3_0fo3i")]
+position = Vector2(574, 314)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("4_yd64k")]
+unique_name_in_owner = true
+
+[node name="Mobs" type="Node" parent="."]
+
+[node name="Mob" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(1062, 3)
+
+[node name="Mob2" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(143, 6)
+
+[node name="Mob3" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(24, 404)
+
+[node name="Mob4" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(1094, 259)
+
+[node name="Mob5" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(579, 6)
+
+[node name="Mob6" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(1142, 614)
+
+[node name="Mob7" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(616, 644)
+
+[node name="Mob8" parent="Mobs" instance=ExtResource("5_12bjj")]
+position = Vector2(126, 628)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.298039, 0.298039, 0.298039, 0.713726)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_cbach")
+theme_override_font_sizes/font_size = 90
+text = "GAME OVER"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
