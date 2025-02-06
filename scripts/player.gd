@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var taustamusiikki = $taustaMusiikki
+
 signal health_depleted 
 
 #Pelaajan health
@@ -24,3 +26,8 @@ func _physics_process(delta: float) -> void:
 			health_depleted.emit()
 			
 	
+# Musiikintoisto kentän alkaessa
+func soitaMusiikki():
+	taustamusiikki.play()
+func _ready():
+	soitaMusiikki()
