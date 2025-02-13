@@ -1,12 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bto2uwkcee1bu"]
+[gd_scene load_steps=16 format=3 uid="uid://bto2uwkcee1bu"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dosvn"]
 [ext_resource type="PackedScene" uid="uid://bpjvl4gwiq4pc" path="res://scenes/gun.tscn" id="3_gyfc5"]
 [ext_resource type="AudioStream" uid="uid://dll4g38p587fr" path="res://audio/RevolveriAmmus.wav" id="4_gk1qd"]
 [ext_resource type="AudioStream" uid="uid://fr7sj0b55kvd" path="res://audio/Dark Fantasy Chiptune.wav" id="4_hu5bj"]
+[ext_resource type="Texture2D" uid="uid://bcdykp6ylbctk" path="res://assets/images/player_spritesheet.png" id="4_qa6hr"]
 [ext_resource type="AudioStream" uid="uid://e2p4e625nja7" path="res://audio/PelaajaOsuma.wav" id="7_36qfr"]
 [ext_resource type="AudioStream" uid="uid://c7ajgo75fyd62" path="res://audio/LowHealth.wav" id="8_isyu3"]
-[ext_resource type="Texture2D" uid="uid://bcdykp6ylbctk" path="res://assets/images/player_spritesheet.png" id="4_qa6hr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04oqh"]
 bg_color = Color(0.25098, 0.27451, 0.321569, 0.764706)
