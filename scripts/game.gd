@@ -10,8 +10,6 @@ func _on_timer_timeout() -> void:
 	%Portal.set_collision_mask_value(3, true)
 
 
-	
-
 
 func spawn_mob():
 	var new_mob = preload("res://scenes/mob.tscn").instantiate()
@@ -23,8 +21,6 @@ func spawn_mob():
 
 func _on_mob_timer_timeout() -> void:
 	spawn_mob()
-
-
 
 
 func _on_mob_timer_2_timeout() -> void:
