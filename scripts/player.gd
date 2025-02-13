@@ -7,6 +7,7 @@ signal health_depleted
 #Pelaajan health
 var health = 100.0
 	
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
 # Pelaajahahmon liike
@@ -14,6 +15,16 @@ func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	# Hahmon nopeus
 	velocity = direction * 650
+	
+	if direction[0] < 0:
+		animated_sprite.flip_h = true
+	elif direction[0] > 0:
+		animated_sprite.flip_h = false
+		
+	if velocity[0] != 0 || velocity[1] != 0:
+		animated_sprite.play("move")
+	else:
+		animated_sprite.stop()
 	move_and_slide()
 
 #Pelaajan ottama damagen määrittelyä
