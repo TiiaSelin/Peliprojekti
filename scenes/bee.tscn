@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://duaiccwjhruah"]
+[gd_scene load_steps=8 format=3 uid="uid://dqg3f2eumqjdk"]
 
 [ext_resource type="Script" path="res://scripts/bee.gd" id="1_vrcw8"]
 [ext_resource type="Texture2D" uid="uid://v71ybx7s4grv" path="res://assets/images/bee_spritesheet.png" id="2_tnaur"]
