@@ -16,11 +16,13 @@ func _physics_process(delta: float) -> void:
 	# Hahmon nopeus
 	velocity = direction * 650
 	
+	# Hahmon orientoituminen.
 	if direction[0] < 0:
 		animated_sprite.flip_h = true
 	elif direction[0] > 0:
 		animated_sprite.flip_h = false
 		
+	# Hahmon animaatio pyörii vain jos se liikkuu.
 	if velocity[0] != 0 || velocity[1] != 0:
 		animated_sprite.play("move")
 	else:
