@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bypya8b5qme1x"]
+[gd_scene load_steps=7 format=3 uid="uid://bypya8b5qme1x"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_d8bjg"]
 [ext_resource type="Texture2D" uid="uid://c2x1tu76xsq4f" path="res://assets/images/background/background_image.jpg" id="2_ttqnj"]
+[ext_resource type="AudioStream" uid="uid://cxwvroefj5q2n" path="res://audio/ClickSound.wav" id="3_uw6oa"]
 
 [sub_resource type="Theme" id="Theme_xmwjd"]
 
@@ -102,3 +103,8 @@ theme_override_constants/outline_size = 12
 theme_override_fonts/font = SubResource("SystemFont_5tnme")
 theme_override_font_sizes/font_size = 30
 text = "EXIT"
+
+[node name="clickSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(516, 274)
+stream = ExtResource("3_uw6oa")
+volume_db = -14.362
