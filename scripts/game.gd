@@ -21,5 +21,11 @@ func spawn_mob():
 	
 
 
-func _on_timer_2_timeout() -> void:
+func _on_mob_timer_timeout() -> void:
+	spawn_mob()
+
+
+
+
+func _on_mob_timer_2_timeout() -> void:
 	spawn_mob()

@@ -48,8 +48,6 @@ position = Vector2(574, 314)
 [node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("4_slenh")]
 unique_name_in_owner = true
 
-[node name="Mobs" type="Node" parent="."]
-
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -106,10 +104,10 @@ unique_name_in_owner = true
 position = Vector2(-37, -78)
 rotation = -0.00896471
 
-[node name="Timer2" type="Timer" parent="."]
+[node name="Mob_timer" type="Timer" parent="."]
 wait_time = 0.439
 autostart = true
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Mob_timer" to="." method="_on_mob_timer_timeout"]
