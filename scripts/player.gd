@@ -51,5 +51,10 @@ func playLowHealthWarning():
 func soitaMusiikki():
 	taustamusiikki.play()
 func _ready():
+	taustamusiikki.connect("finished", Callable(self, "_on_musiikki_finished"))
 	if not taustamusiikki.playing:
 		soitaMusiikki()
+
+
+func _on_musiikki_finished():
+	soitaMusiikki()
