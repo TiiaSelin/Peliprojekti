@@ -8,7 +8,7 @@ extends CharacterBody2D
 signal health_depleted 
 
 #Pelaajan health
-var health = 100.0
+var health = 100.0 
 	
 
 # Pelaajahahmon liike
