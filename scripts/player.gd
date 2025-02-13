@@ -51,4 +51,5 @@ func playLowHealthWarning():
 func soitaMusiikki():
 	taustamusiikki.play()
 func _ready():
-	soitaMusiikki()
+	if not taustamusiikki.playing:
+		soitaMusiikki()
