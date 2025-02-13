@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var taustamusiikki = $taustaMusiikki
-@onready var kuolemisAani = $pelaajaKuolema
 @onready var pelaajaOsuma = $pelaajaOsuma
 @onready var lowHealth = $lowHealth
 
@@ -35,10 +34,7 @@ func _physics_process(delta: float) -> void:
 		%ProgressBar.value = health
 		if health <= 0:
 			health_depleted.emit()
-			# Audio
-			kuolemisAani.play()
 			
-	
 	
 	
 	
@@ -53,7 +49,6 @@ func _ready():
 	taustamusiikki.connect("finished", Callable(self, "_on_musiikki_finished"))
 	if not taustamusiikki.playing:
 		soitaMusiikki()
-
 
 func _on_musiikki_finished():
 	soitaMusiikki()
