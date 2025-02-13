@@ -4,11 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_q74np"]
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_0fo3i"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_yd64k"]
-[ext_resource type="PackedScene" uid="uid://1urwapxgwkiu" path="res://scenes/mob.tscn" id="5_12bjj"]
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
 subpixel_positioning = 0
+
+[sub_resource type="Curve2D" id="Curve2D_6243n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -84, -147, 0, 0, 0, 0, 1228, -147, 0, 0, 0, 0, 1232, 771, 0, 0, 0, 0, -80, 771, 0, 0, 0, 0, -85, -146)
+}
+point_count = 5
 
 [node name="Game" type="Node2D"]
 process_mode = 1
@@ -41,32 +46,6 @@ position = Vector2(574, 314)
 
 [node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("4_yd64k")]
 unique_name_in_owner = true
-
-[node name="Mobs" type="Node" parent="."]
-
-[node name="Mob" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(1062, 3)
-
-[node name="Mob2" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(143, 6)
-
-[node name="Mob3" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(24, 404)
-
-[node name="Mob4" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(1094, 259)
-
-[node name="Mob5" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(579, 6)
-
-[node name="Mob6" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(1142, 614)
-
-[node name="Mob7" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(616, 644)
-
-[node name="Mob8" parent="Mobs" instance=ExtResource("5_12bjj")]
-position = Vector2(126, 628)
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -106,4 +85,16 @@ theme_override_fonts/font = SubResource("SystemFont_cbach")
 theme_override_font_sizes/font_size = 90
 text = "GAME OVER"
 
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_6243n")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-84, -147)
+
+[node name="Mob_timer2" type="Timer" parent="."]
+wait_time = 0.309
+autostart = true
+
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Mob_timer2" to="." method="_on_mob_timer_2_timeout"]

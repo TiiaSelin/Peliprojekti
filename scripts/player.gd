@@ -10,12 +10,25 @@ signal health_depleted
 #Pelaajan health
 var health = 100.0 
 	
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # Pelaajahahmon liike
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	# Hahmon nopeus
 	velocity = direction * 650
+	
+	# Hahmon orientoituminen.
+	if direction[0] < 0:
+		animated_sprite.flip_h = true
+	elif direction[0] > 0:
+		animated_sprite.flip_h = false
+		
+	# Hahmon animaatio pyörii vain jos se liikkuu.
+	if velocity[0] != 0 || velocity[1] != 0:
+		animated_sprite.play("move")
+	else:
+		animated_sprite.stop()
 	move_and_slide()
 	playLowHealthWarning() # Low health-varoitusääni kun health alle 30
 	
