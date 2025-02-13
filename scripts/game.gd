@@ -19,9 +19,9 @@ func spawn_mob():
 	
 
 
-func _on_mob_timer_timeout() -> void:
+func _on_mob_timer_timeout() -> void: #level_1 ajastin vihollisten ilmestymiselle
 	spawn_mob()
 
 
-func _on_mob_timer_2_timeout() -> void:
+func _on_mob_timer_2_timeout() -> void: #level_2 ajastin vihollisten ilmestymiselle
 	spawn_mob()
