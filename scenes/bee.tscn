@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://1urwapxgwkiu"]
+
+[ext_resource type="Script" path="res://scripts/bee.gd" id="1_vrcw8"]
+[ext_resource type="Texture2D" uid="uid://v71ybx7s4grv" path="res://assets/images/bee_spritesheet.png" id="2_tnaur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36wml"]
+radius = 181.318
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp8jv"]
+atlas = ExtResource("2_tnaur")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ua5a"]
+atlas = ExtResource("2_tnaur")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlql7"]
+atlas = ExtResource("2_tnaur")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7svxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp8jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ua5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlql7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ua5a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_vrcw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(0.0774092, 0.0774092)
+shape = SubResource("CircleShape2D_36wml")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7svxt")
+autoplay = "default"
+frame = 1
+frame_progress = 0.311765
