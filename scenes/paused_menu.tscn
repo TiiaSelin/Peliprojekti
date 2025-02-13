@@ -85,8 +85,12 @@ text = "QUIT GAME
 "
 
 [node name="pelaajaKuolema" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("2_k1etn")
 volume_db = 9.41
+max_polyphony = 10
+
+[node name="clickSound" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="GridContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/settings" to="." method="_on_settings_pressed"]

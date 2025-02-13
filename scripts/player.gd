@@ -43,7 +43,6 @@ func _physics_process(delta: float) -> void:
 		if not pelaajaOsuma.playing:
 			pelaajaOsuma.play()
 		
-		
 		%ProgressBar.value = health
 		if health <= 0:
 			health_depleted.emit()
