@@ -30,4 +30,4 @@ shape = SubResource("CircleShape2D_36wml")
 position = Vector2(1.19209e-07, -2.38419e-07)
 scale = Vector2(1, 1)
 stream = ExtResource("3_on2gy")
-volume_db = 11.124
+volume_db = -1.486
