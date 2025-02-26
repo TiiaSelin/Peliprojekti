@@ -1,20 +1,15 @@
 extends Node2D
 
 @onready var final_timer: Timer = $final_timer
+@onready var final_level: CanvasLayer = $FinalLevel
 
 func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
 	%PausedMenu.disable_pause()  # Estetään pause-menun käyttö ja pysäytetään peli
 
-
-'''
-func _on_timer_timeout() -> void:
-	%Portal.visible = true
-	%Portal.set_collision_mask_value(3, true)
-'''
-
 func _ready():
 	get_tree().paused = true
+	final_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	final_timer.start()
 
 func spawn_mob():
@@ -24,10 +19,10 @@ func spawn_mob():
 	add_child(new_mob)
 	
 
-func _on_mob_timer_2_timeout() -> void: #level_2 ajastin vihollisten ilmestymiselle
+func _on_mob_timer_2_timeout() -> void:
 	spawn_mob()
 
 
 func _on_final_timer_timeout() -> void:
 	get_tree().paused = false
-	%FinalLevel.visible = false
+	final_level.visible = false
