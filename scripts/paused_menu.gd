@@ -3,6 +3,7 @@ extends Control
 @onready var pelaajaKuolema = $pelaajaKuolema
 @onready var clickSound = $clickSound
 
+var can_pause = true
 
 var _is_paused: bool = false:
 	set = set_paused
@@ -14,12 +15,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		_is_paused = !_is_paused
 
 func set_paused(value: bool) -> void:
-	if _is_game_over:
-		return 
+	if can_pause:
+		if _is_game_over:
+			return 
 
-	_is_paused = value
-	get_tree().paused = _is_paused
-	visible = _is_paused
+		_is_paused = value
+		get_tree().paused = _is_paused
+		visible = _is_paused
 
 func _on_resume_pressed() -> void:
 	set_paused(false)

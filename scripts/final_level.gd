@@ -8,6 +8,7 @@ func _on_player_health_depleted() -> void:
 	%PausedMenu.disable_pause()  # Estetään pause-menun käyttö ja pysäytetään peli
 
 func _ready():
+	%PausedMenu.can_pause = false
 	get_tree().paused = true
 	final_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	final_timer.start()
@@ -26,3 +27,4 @@ func _on_mob_timer_2_timeout() -> void:
 func _on_final_timer_timeout() -> void:
 	get_tree().paused = false
 	final_level.visible = false
+	%PausedMenu.can_pause = true	
