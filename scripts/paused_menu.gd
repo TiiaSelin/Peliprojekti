@@ -1,5 +1,9 @@
 extends Control
 
+@onready var pelaajaKuolema = $pelaajaKuolema
+@onready var clickSound = $clickSound
+
+
 var _is_paused: bool = false:
 	set = set_paused
 
@@ -28,7 +32,9 @@ func _on_quit_pressed() -> void:
 
 # Tämä estää pausen ja pysäyttää kaiken game overin tullessa
 func disable_pause() -> void:
+	pelaajaKuolema.play()
 	_is_game_over = true
 	_is_paused = false
 	get_tree().paused = true  # Varmistetaan, että peli oikeasti pysähtyy
-	visible = false 
+	visible = false
+	
