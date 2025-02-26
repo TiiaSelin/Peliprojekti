@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://canjdd6c25ul2"]
+[gd_scene load_steps=9 format=3 uid="uid://dokd3va2hrdvs"]
 
-[ext_resource type="Script" path="res://scripts/game.gd" id="1_wh6cu"]
-[ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_q74np"]
-[ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_0fo3i"]
-[ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_yd64k"]
-[ext_resource type="PackedScene" uid="uid://c0ij7jwvcow3y" path="res://scenes/portal.tscn" id="5_1o3mu"]
-[ext_resource type="AudioStream" uid="uid://bp8e74r000d0w" path="res://audio/Portal.wav" id="5_3551p"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_ehn1j"]
+[ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_4ly5x"]
+[ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_qvrev"]
+[ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_7cvog"]
+[ext_resource type="PackedScene" uid="uid://c0ij7jwvcow3y" path="res://scenes/portal.tscn" id="5_obsrb"]
+[ext_resource type="AudioStream" uid="uid://bp8e74r000d0w" path="res://audio/Portal.wav" id="6_to1p7"]
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
@@ -19,7 +19,7 @@ point_count = 5
 
 [node name="Game" type="Node2D"]
 process_mode = 1
-script = ExtResource("1_wh6cu")
+script = ExtResource("1_ehn1j")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -12
@@ -38,15 +38,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_q74np")
+texture = ExtResource("2_4ly5x")
 expand_mode = 1
 
-[node name="Player" parent="." instance=ExtResource("3_0fo3i")]
+[node name="Player" parent="." instance=ExtResource("3_qvrev")]
 position = Vector2(574, 314)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("4_yd64k")]
+[node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("4_7cvog")]
 unique_name_in_owner = true
 
 [node name="GameOver" type="CanvasLayer" parent="."]
@@ -87,14 +87,14 @@ theme_override_fonts/font = SubResource("SystemFont_cbach")
 theme_override_font_sizes/font_size = 90
 text = "GAME OVER"
 
-[node name="Portal" parent="." instance=ExtResource("5_1o3mu")]
+[node name="Portal" parent="." instance=ExtResource("5_obsrb")]
 unique_name_in_owner = true
 visible = false
 position = Vector2(579, 37)
 collision_mask = 0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 13.157
+wait_time = 10.0
 autostart = true
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -109,7 +109,7 @@ wait_time = 0.309
 autostart = true
 
 [node name="portalSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_3551p")
+stream = ExtResource("6_to1p7")
 autoplay = true
 max_polyphony = 10
 
