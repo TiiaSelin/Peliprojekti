@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpjvl4gwiq4pc"]
 
 [ext_resource type="Script" path="res://scripts/gun.gd" id="1_mw678"]
-[ext_resource type="Texture2D" uid="uid://5olcgy762nnn" path="res://assets/images/revolver.png" id="2_lk2s4"]
+[ext_resource type="Texture2D" uid="uid://no7qitpm34wi" path="res://assets/images/staff.webp" id="2_ebp4l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b513g"]
 radius = 298.06
@@ -25,8 +25,8 @@ shape = SubResource("CircleShape2D_b513g")
 position = Vector2(2, -1)
 rotation = 0.0637522
 
-[node name="revolver" type="Sprite2D" parent="CollisionShape2D/WeaponPivot"]
-position = Vector2(3.8147e-06, 0)
-rotation = -0.0299723
-scale = Vector2(0.0464796, 0.0464796)
-texture = ExtResource("2_lk2s4")
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D/WeaponPivot"]
+position = Vector2(24.015, -0.531048)
+rotation = 1.58735
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ebp4l")
