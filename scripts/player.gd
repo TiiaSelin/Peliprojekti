@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var pelaajaOsuma = $pelaajaOsuma
 @onready var lowHealth = $lowHealth
 @onready var pelaajaKuolema = $pelaajaKuolema
+@onready var staff: Area2D = %Staff
 
 
 signal health_depleted 
@@ -22,8 +23,10 @@ func _physics_process(delta: float) -> void:
 	# Hahmon orientoituminen.
 	if direction[0] < 0:
 		animated_sprite.flip_h = true
+		staff.position.x = -54
 	elif direction[0] > 0:
 		animated_sprite.flip_h = false
+		staff.position.x = 54
 		
 	# Hahmon animaatio pyörii vain jos se liikkuu.
 	if velocity[0] != 0 || velocity[1] != 0:

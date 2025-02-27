@@ -71,11 +71,12 @@ script = ExtResource("1_dosvn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Gun" parent="." instance=ExtResource("3_gyfc5")]
+[node name="Staff" parent="." instance=ExtResource("3_gyfc5")]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(54, 35)
 
-[node name="revolveriAmmus" type="AudioStreamPlayer2D" parent="Gun"]
+[node name="revolveriAmmus" type="AudioStreamPlayer2D" parent="Staff"]
 stream = ExtResource("4_gk1qd")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
