@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8bci4jd5pixf"]
+[gd_scene load_steps=8 format=3 uid="uid://b8bci4jd5pixf"]
 
 [ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_w46cb"]
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_2q8v4"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_v3ulk"]
 [ext_resource type="Script" path="res://scripts/final_level.gd" id="5_edf17"]
-[ext_resource type="AudioStream" uid="uid://bytjj2o4tva8d" path="res://audio/FinalLevelÄäni.wav" id="5_xkgre"]
-[ext_resource type="AudioStream" uid="uid://lgeahpumkma0" path="res://audio/Dark Fantasy Chiptune Final Level.wav" id="6_l74hv"]
+[ext_resource type="PackedScene" uid="uid://c445xppa01cqr" path="res://scenes/victory_screen.tscn" id="5_xql2s"]
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
@@ -48,6 +47,12 @@ position = Vector2(574, 314)
 
 [node name="PausedMenu" parent="CanvasLayer2" instance=ExtResource("4_v3ulk")]
 unique_name_in_owner = true
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+
+[node name="VictoryScreen" parent="CanvasLayer3" instance=ExtResource("5_xql2s")]
+unique_name_in_owner = true
+visible = false
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
