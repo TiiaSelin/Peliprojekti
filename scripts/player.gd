@@ -35,10 +35,13 @@ func _physics_process(delta: float) -> void:
 
 
 #Pelaajan ottama damagen määrittelyä
-	const DAMAGE_RATE = 5.0
+	var damage_rate = 5.0
 	var overlapping_mobs = %HurtBox.get_overlapping_bodies()
+	
 	if overlapping_mobs.size() > 0:
-		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+		if (overlapping_mobs[0].collision_layer == 11):
+			damage_rate = 50
+		health -= damage_rate * overlapping_mobs.size() * delta
 		# Audio
 		if not pelaajaOsuma.playing:
 			pelaajaOsuma.play()
