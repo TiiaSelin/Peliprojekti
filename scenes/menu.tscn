@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bypya8b5qme1x"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_d8bjg"]
-[ext_resource type="Texture2D" uid="uid://c2x1tu76xsq4f" path="res://assets/images/background/background_image.jpg" id="2_ttqnj"]
+[ext_resource type="Texture2D" uid="uid://cttttr11phva6" path="res://assets/images/background/mushroombackground5.png" id="2_f8ydd"]
 [ext_resource type="AudioStream" uid="uid://cxwvroefj5q2n" path="res://audio/ClickSound.wav" id="3_uw6oa"]
 
 [sub_resource type="Theme" id="Theme_xmwjd"]
@@ -30,7 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_xmwjd")
-texture = ExtResource("2_ttqnj")
+texture = ExtResource("2_f8ydd")
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
