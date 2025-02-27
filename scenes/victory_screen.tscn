@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://c445xppa01cqr"]
+
+[ext_resource type="Script" path="res://scripts/victory_screen.gd" id="1_g1gmm"]
+[ext_resource type="AudioStream" uid="uid://cxwvroefj5q2n" path="res://audio/ClickSound.wav" id="2_o6fpt"]
+
+[sub_resource type="SystemFont" id="SystemFont_y41mi"]
+font_names = PackedStringArray("OCR A")
+font_weight = 500
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_ex76j"]
+font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
+
+[node name="VictoryScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g1gmm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.815686, 0.780392, 0.803922, 0.611765)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 15
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("SystemFont_y41mi")
+theme_override_font_sizes/font_size = 68
+text = "You survived."
+
+[node name="newgame" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_ex76j")
+theme_override_font_sizes/font_size = 24
+text = "NEW GAME"
+
+[node name="quit" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_ex76j")
+theme_override_font_sizes/font_size = 24
+text = "QUIT GAME
+"
+
+[node name="clickSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_o6fpt")
+volume_db = -14.361
+
+[connection signal="pressed" from="GridContainer/newgame" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]

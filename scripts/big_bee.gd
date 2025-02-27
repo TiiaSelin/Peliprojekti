@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 @onready var player = get_node("/root/Game/Player")
+@onready var victory_screen = get_node("/root/Game/CanvasLayer3/VictoryScreen")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var health = 50
+var health = 5
 
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
@@ -21,4 +22,6 @@ func take_damage():
 	%ProgressBar.value = health
 	
 	if health == 0:
+		victory_screen.visible = true 
 		queue_free()
+		
