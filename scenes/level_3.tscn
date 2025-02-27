@@ -94,7 +94,7 @@ position = Vector2(579, 37)
 collision_mask = 0
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 30.0
 autostart = true
 
 [node name="Path2D" type="Path2D" parent="."]
@@ -105,7 +105,7 @@ unique_name_in_owner = true
 position = Vector2(-84, -147)
 
 [node name="Mob_timer2" type="Timer" parent="."]
-wait_time = 0.309
+wait_time = 0.235
 autostart = true
 
 [node name="portalSound" type="AudioStreamPlayer2D" parent="."]
