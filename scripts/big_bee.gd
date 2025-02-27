@@ -13,11 +13,12 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = false
 	else:
 		animated_sprite.flip_h = true
-	velocity = direction * 200.0
+	velocity = direction * 260.0
 	move_and_slide()
 
 func take_damage():
 	health -= 1
+	%ProgressBar.value = health
 	
 	if health == 0:
 		queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckgxgf4lytkta"]
+[gd_scene load_steps=11 format=3 uid="uid://c31s3vsvpmwop"]
 
 [ext_resource type="Script" path="res://scripts/big_bee.gd" id="1_osj5k"]
 [ext_resource type="Texture2D" uid="uid://dgel1knoe7ekb" path="res://assets/images/big_bee_spritesheet.png" id="2_xlclq"]
@@ -42,6 +42,21 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_howky"]
+bg_color = Color(0.25098, 0.27451, 0.321569, 0.764706)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mobmv"]
+bg_color = Color(0.188235, 0.764706, 0.270588, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 4
+
 [node name="Big Bee" type="CharacterBody2D"]
 collision_layer = 11
 script = ExtResource("1_osj5k")
@@ -56,3 +71,15 @@ sprite_frames = SubResource("SpriteFrames_gsnyn")
 autoplay = "default"
 frame = 2
 frame_progress = 0.574736
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -77.0
+offset_top = -202.0
+offset_right = 116.0
+offset_bottom = -170.0
+theme_override_styles/background = SubResource("StyleBoxFlat_howky")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mobmv")
+max_value = 50.0
+value = 50.0
+show_percentage = false
