@@ -4,9 +4,7 @@ extends Control
 @onready var pauseSound = $pauseSound
 @onready var resumeSound = $resumeSound
 
-
-
-func _ready() -> void:
+func _ready() -> void: # Liitetään kursorin liike näppäimeen
 	$GridContainer/resume.connect("mouse_entered", _on_button_hover)
 	$GridContainer/settings.connect("mouse_entered", _on_button_hover)
 	$GridContainer/quit.connect("mouse_entered", _on_button_hover)
