@@ -3,6 +3,8 @@ extends Node2D
 @onready var final_timer: Timer = $final_timer
 @onready var final_level: CanvasLayer = $FinalLevel
 @onready var finalLevelÄäni = $finalLevelÄäni
+@onready var finalLevelTaustamusiikki = $finalLevelTaustamusiikki
+@onready var taustamusiikki = $Player/taustaMusiikki
 
 
 func _on_player_health_depleted() -> void:
@@ -15,6 +17,9 @@ func _ready():
 	final_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	final_timer.start()
 	finalLevelÄäni.play() # Soita pahaenteinen ääni ennen bossia
+	taustamusiikki.stop()
+	soitaFinalLevelTaustamusiikki()
+	
 	
 
 func spawn_mob():
@@ -28,3 +33,9 @@ func _on_final_timer_timeout() -> void:
 	final_level.visible = false
 	%PausedMenu.can_pause = true
 	spawn_mob()
+
+# Audiofunktiot
+func soitaFinalLevelTaustamusiikki():
+	if not finalLevelTaustamusiikki.playing: 
+		finalLevelTaustamusiikki.play()
+	
