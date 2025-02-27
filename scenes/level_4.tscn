@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8bci4jd5pixf"]
+[gd_scene load_steps=8 format=3 uid="uid://b8bci4jd5pixf"]
 
 [ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_w46cb"]
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_2q8v4"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_v3ulk"]
 [ext_resource type="Script" path="res://scripts/final_level.gd" id="5_edf17"]
+[ext_resource type="AudioStream" uid="uid://bytjj2o4tva8d" path="res://audio/FinalLevelÄäni.wav" id="5_xkgre"]
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
@@ -136,6 +137,11 @@ position = Vector2(-84, -147)
 [node name="Mob_timer2" type="Timer" parent="."]
 wait_time = 0.309
 autostart = true
+
+[node name="finalLevelÄäni" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("5_xkgre")
+volume_db = -7.429
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="final_timer" to="." method="_on_final_timer_timeout"]
