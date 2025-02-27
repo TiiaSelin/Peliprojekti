@@ -26,5 +26,5 @@ func shoot():
 	%ShootingPoint.add_child(new_projectile)
 	
 	# Audio ampumisääneen
-	
+
 	ampuminen.play()

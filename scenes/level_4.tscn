@@ -147,6 +147,7 @@ volume_db = -7.429
 [node name="finalLevelTaustamusiikki" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_l74hv")
 max_distance = 1e+10
+attenuation = 1e-05
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="final_timer" to="." method="_on_final_timer_timeout"]
