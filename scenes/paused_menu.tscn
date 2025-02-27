@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://wljcdsrx0cxg"]
+[gd_scene load_steps=7 format=3 uid="uid://wljcdsrx0cxg"]
 
 [ext_resource type="Script" path="res://scripts/paused_menu.gd" id="1_7xp5u"]
-[ext_resource type="AudioStream" uid="uid://7p6difelh8y8" path="res://audio/PelaajaKuolema.wav" id="2_k1etn"]
+[ext_resource type="AudioStream" uid="uid://cxwvroefj5q2n" path="res://audio/ClickSound.wav" id="2_vclkd"]
+[ext_resource type="AudioStream" uid="uid://hq3ajdbblrel" path="res://audio/pauseSound.wav" id="3_0qmat"]
+[ext_resource type="AudioStream" uid="uid://cl7w522erygje" path="res://audio/resumeSound.wav" id="4_lk0qv"]
 
 [sub_resource type="SystemFont" id="SystemFont_y41mi"]
 font_names = PackedStringArray("OCR A")
@@ -84,13 +86,18 @@ theme_override_font_sizes/font_size = 24
 text = "QUIT GAME
 "
 
-[node name="pelaajaKuolema" type="AudioStreamPlayer2D" parent="."]
-process_mode = 3
-stream = ExtResource("2_k1etn")
-volume_db = 9.41
-max_polyphony = 10
-
 [node name="clickSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_vclkd")
+volume_db = -14.361
+
+[node name="pauseSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("3_0qmat")
+
+[node name="resumeSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_lk0qv")
 
 [connection signal="pressed" from="GridContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/settings" to="." method="_on_settings_pressed"]
