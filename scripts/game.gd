@@ -14,11 +14,9 @@ func _on_timer_timeout() -> void:
 	
 	var sprite = %Portal.get_node("AnimatedSprite2D")
 	
-	if sprite.animation_finished.is_connected(_on_portal_spawn):
-		sprite.animation_finished.disconnect(_on_portal_spawn)
-		
-	sprite.animation_finished.connect(_on_portal_spawn)
 	sprite.play("spawn")
+	sprite.animation_finished.connect(_on_portal_spawn)
+	
 	
 func _on_portal_spawn():
 	%Portal.get_node("AnimatedSprite2D").play("default")
