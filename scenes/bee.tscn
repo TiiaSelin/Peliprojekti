@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://v71ybx7s4grv" path="res://assets/images/bee_spritesheet.png" id="2_tnaur"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_36wml"]
-radius = 181.318
+radius = 310.31
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vp8jv"]
 atlas = ExtResource("2_tnaur")
@@ -48,6 +48,7 @@ scale = Vector2(0.0774092, 0.0774092)
 shape = SubResource("CircleShape2D_36wml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_7svxt")
 autoplay = "default"
 frame = 1
