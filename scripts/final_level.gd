@@ -14,17 +14,13 @@ func _ready():
 	final_timer.start()
 
 func spawn_mob():
-	var new_mob = preload("res://scenes/bee.tscn").instantiate()
+	var new_mob = preload("res://scenes/big_bee.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
 	
-
-func _on_mob_timer_2_timeout() -> void:
-	spawn_mob()
-
-
 func _on_final_timer_timeout() -> void:
 	get_tree().paused = false
 	final_level.visible = false
-	%PausedMenu.can_pause = true	
+	%PausedMenu.can_pause = true
+	spawn_mob()
