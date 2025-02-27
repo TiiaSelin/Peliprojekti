@@ -1,7 +1,13 @@
 extends Control
 
-@onready var pelaajaKuolema = $pelaajaKuolema
 @onready var clickSound = $clickSound
+@onready var pauseSound = $pauseSound
+@onready var resumeSound = $resumeSound
+
+func _ready() -> void: # Liitetään kursorin liike näppäimeen
+	$GridContainer/resume.connect("mouse_entered", _on_button_hover)
+	$GridContainer/settings.connect("mouse_entered", _on_button_hover)
+	$GridContainer/quit.connect("mouse_entered", _on_button_hover)
 
 var can_pause = true
 
@@ -18,10 +24,17 @@ func set_paused(value: bool) -> void:
 	if can_pause:
 		if _is_game_over:
 			return 
+		# Jos peli menee pauselle, soitetaan pauseSound
+		if value and pauseSound:
+			pauseSound.play()
 
 		_is_paused = value
 		get_tree().paused = _is_paused
 		visible = _is_paused
+		
+			# Jos peli jatkuu (pausen päättyessä), soitetaan resumeSound
+		if not value and resumeSound:
+			resumeSound.play()
 
 func _on_resume_pressed() -> void:
 	set_paused(false)
@@ -34,9 +47,12 @@ func _on_quit_pressed() -> void:
 
 # Tämä estää pausen ja pysäyttää kaiken game overin tullessa
 func disable_pause() -> void:
-	pelaajaKuolema.play()
 	_is_game_over = true
 	_is_paused = false
 	get_tree().paused = true  # Varmistetaan, että peli oikeasti pysähtyy
 	visible = false
+	
+# Äänifunktiot
+func _on_button_hover() -> void:
+		clickSound.play()
 	

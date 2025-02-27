@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bto2uwkcee1bu"]
+[gd_scene load_steps=17 format=3 uid="uid://bto2uwkcee1bu"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dosvn"]
 [ext_resource type="PackedScene" uid="uid://bpjvl4gwiq4pc" path="res://scenes/gun.tscn" id="3_gyfc5"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://fr7sj0b55kvd" path="res://audio/Dark Fantasy Chiptune.wav" id="4_hu5bj"]
 [ext_resource type="Texture2D" uid="uid://bcdykp6ylbctk" path="res://assets/images/player_spritesheet.png" id="4_qa6hr"]
 [ext_resource type="AudioStream" uid="uid://e2p4e625nja7" path="res://audio/PelaajaOsuma.wav" id="7_36qfr"]
+[ext_resource type="AudioStream" uid="uid://7p6difelh8y8" path="res://audio/PelaajaKuolema.wav" id="8_6tnx7"]
 [ext_resource type="AudioStream" uid="uid://c7ajgo75fyd62" path="res://audio/LowHealth.wav" id="8_isyu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04oqh"]
@@ -117,3 +118,7 @@ volume_db = -24.266
 [node name="lowHealth" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_isyu3")
 volume_db = -4.457
+
+[node name="pelaajaKuolema" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("8_6tnx7")
