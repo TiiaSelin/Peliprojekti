@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var taustamusiikki = $taustaMusiikki
 @onready var pelaajaOsuma = $pelaajaOsuma
 @onready var lowHealth = $lowHealth
+@onready var pelaajaKuolema = $pelaajaKuolema
 
 
 signal health_depleted 
@@ -31,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.stop()
 	move_and_slide()
 	playLowHealthWarning() # Low health-varoitusääni kun health alle 30
+	playPelaajaKuolema() # Kuolema-ääni kun health on 1
 	
 
 
@@ -54,6 +56,9 @@ func _physics_process(delta: float) -> void:
 func playLowHealthWarning():
 	if health <= 30 and not lowHealth.playing:
 		lowHealth.play()
+func playPelaajaKuolema():
+	if health <= 1 and not pelaajaKuolema.playing:
+		pelaajaKuolema.play()
 # Musiikintoisto kentän alkaessa
 func soitaMusiikki():
 	taustamusiikki.play()
