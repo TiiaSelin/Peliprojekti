@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqg3f2eumqjdk"]
+[gd_scene load_steps=8 format=3 uid="uid://i1rhsgiki6dp"]
 
 [ext_resource type="Script" path="res://scripts/bee.gd" id="1_vrcw8"]
 [ext_resource type="Texture2D" uid="uid://v71ybx7s4grv" path="res://assets/images/bee_spritesheet.png" id="2_tnaur"]
@@ -38,7 +38,7 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Mob" type="CharacterBody2D"]
+[node name="Bee" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_vrcw8")
 
