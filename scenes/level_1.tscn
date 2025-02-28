@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_kjqq8"]
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_c8uir"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_slenh"]
-[ext_resource type="PackedScene" path="res://scenes/portal.tscn" id="6_oiyuk"]
+[ext_resource type="PackedScene" uid="uid://c0ij7jwvcow3y" path="res://scenes/portal.tscn" id="6_oiyuk"]
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
@@ -94,6 +94,7 @@ collision_mask = 0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
+one_shot = true
 autostart = true
 
 [node name="Path2D" type="Path2D" parent="."]
