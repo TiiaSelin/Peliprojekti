@@ -79,5 +79,6 @@ process_mode = 3
 stream = ExtResource("2_o6fpt")
 volume_db = -14.361
 
+[connection signal="pressed" from="GridContainer/newgame" to="." method="_on_newgame_pressed"]
 [connection signal="pressed" from="GridContainer/newgame" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]
