@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c445xppa01cqr"]
+[gd_scene load_steps=6 format=3 uid="uid://c445xppa01cqr"]
 
 [ext_resource type="Script" path="res://scripts/victory_screen.gd" id="1_g1gmm"]
 [ext_resource type="AudioStream" uid="uid://cxwvroefj5q2n" path="res://audio/ClickSound.wav" id="2_o6fpt"]
+[ext_resource type="AudioStream" uid="uid://ds0aro6cm7ipq" path="res://audio/GameWin.wav" id="3_g5x5u"]
 
 [sub_resource type="SystemFont" id="SystemFont_y41mi"]
 font_names = PackedStringArray("OCR A")
@@ -78,6 +79,14 @@ text = "QUIT GAME
 process_mode = 3
 stream = ExtResource("2_o6fpt")
 volume_db = -14.361
+max_polyphony = 10
+
+[node name="gameWinSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("3_g5x5u")
+max_distance = 1e+18
+max_polyphony = 6
+panning_strength = 0.0
 
 [connection signal="pressed" from="GridContainer/newgame" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]
