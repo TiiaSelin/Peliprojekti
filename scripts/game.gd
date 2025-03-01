@@ -14,7 +14,15 @@ func _on_player_health_depleted() -> void:
 func _on_timer_timeout() -> void:
 	%Portal.visible = true
 	%Portal.set_collision_mask_value(3, true)
-
+	
+	var sprite = %Portal.get_node("AnimatedSprite2D")
+	
+	sprite.play("spawn")
+	sprite.animation_finished.connect(_on_portal_spawn)
+	
+	
+func _on_portal_spawn():
+	%Portal.get_node("AnimatedSprite2D").play("default")
 
 
 func spawn_mob():
