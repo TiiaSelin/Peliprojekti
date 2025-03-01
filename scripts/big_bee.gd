@@ -21,6 +21,7 @@ func take_damage():
 	health -= 1
 	%ProgressBar.value = health
 	
+	
 	if health == 0:
 		victory_screen.visible = true
 		victory_screen.end_game()
