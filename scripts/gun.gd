@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var ampuminen = $revolveriAmmus
+@onready var ampuminen = $sauvaAmmus
 
 func _physics_process(delta: float) -> void:
 	var enemies_in_range = get_overlapping_bodies()
