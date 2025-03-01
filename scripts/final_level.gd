@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var final_timer: Timer = $final_timer
 @onready var final_level: CanvasLayer = $FinalLevel
+@onready var finalLevelÄäni = $finalLevelÄäni
+@onready var taustamusiikkiStop = $Player/taustaMusiikki
+@onready var finalLevelTaustaMusiikki = $finalLevelTaustamusiikki
 
 func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
@@ -12,6 +15,10 @@ func _ready():
 	get_tree().paused = true
 	final_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	final_timer.start()
+	finalLevelÄäni.play()
+	taustamusiikkiStop.stop()
+	finalLevelTaustaMusiikki.play()
+	
 
 func spawn_mob():
 	var new_mob = preload("res://scenes/big_bee.tscn").instantiate()
