@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8bci4jd5pixf"]
+[gd_scene load_steps=10 format=3 uid="uid://b8bci4jd5pixf"]
 
 [ext_resource type="Texture2D" uid="uid://dcdf2e1bkmkh7" path="res://assets/images/background/green1.png" id="2_w46cb"]
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_2q8v4"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_v3ulk"]
 [ext_resource type="Script" path="res://scripts/final_level.gd" id="5_edf17"]
 [ext_resource type="PackedScene" uid="uid://c445xppa01cqr" path="res://scenes/victory_screen.tscn" id="5_xql2s"]
+[ext_resource type="AudioStream" uid="uid://cqte2nukwd517" path="res://audio/FinalLevel.wav" id="6_dxocd"]
+[ext_resource type="AudioStream" uid="uid://q7t7elpscyn5" path="res://audio/Dark Fantasy Chiptune Final Level.wav" id="7_vunhb"]
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
@@ -146,13 +148,13 @@ autostart = true
 
 [node name="finalLevelÄäni" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
-stream = ExtResource("5_xkgre")
-volume_db = -7.429
+stream = ExtResource("6_dxocd")
 
 [node name="finalLevelTaustamusiikki" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_l74hv")
-max_distance = 1e+10
-attenuation = 1e-05
+stream = ExtResource("7_vunhb")
+max_distance = 1e+17
+attenuation = 1e+06
+panning_strength = 0.0
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="final_timer" to="." method="_on_final_timer_timeout"]
