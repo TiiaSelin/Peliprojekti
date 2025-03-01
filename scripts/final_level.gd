@@ -4,7 +4,7 @@ extends Node2D
 @onready var final_level: CanvasLayer = $FinalLevel
 @onready var finalLevelÄäni = $finalLevelÄäni
 @onready var taustamusiikkiStop = $Player/taustaMusiikki
-@onready var finalLevelTaustaMusiikki = $finalLevelTaustamusiikki
+@onready var finalLevelTaustamusiikki = $finalLevelTaustamusiikki
 
 func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
@@ -17,7 +17,7 @@ func _ready():
 	final_timer.start()
 	finalLevelÄäni.play()
 	taustamusiikkiStop.stop()
-	finalLevelTaustaMusiikki.play()
+	finalLevelTaustamusiikki.play()
 	
 
 func spawn_mob():

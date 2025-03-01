@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bto2uwkcee1bu" path="res://scenes/player.tscn" id="3_2q8v4"]
 [ext_resource type="PackedScene" uid="uid://wljcdsrx0cxg" path="res://scenes/paused_menu.tscn" id="4_v3ulk"]
 [ext_resource type="Script" path="res://scripts/final_level.gd" id="5_edf17"]
-[ext_resource type="PackedScene" uid="uid://c445xppa01cqr" path="res://scenes/victory_screen.tscn" id="5_xql2s"]
+[ext_resource type="PackedScene" uid="uid://braluysqr3cst" path="res://scenes/victory_screen.tscn" id="5_xql2s"]
 [ext_resource type="AudioStream" uid="uid://cqte2nukwd517" path="res://audio/FinalLevel.wav" id="6_dxocd"]
-[ext_resource type="AudioStream" uid="uid://q7t7elpscyn5" path="res://audio/Dark Fantasy Chiptune Final Level.wav" id="7_vunhb"]
+[ext_resource type="AudioStream" uid="uid://lgeahpumkma0" path="res://audio/Dark Fantasy Chiptune Final Level.wav" id="7_vunhb"]
 
 [sub_resource type="SystemFont" id="SystemFont_cbach"]
 font_names = PackedStringArray("OCR A")
