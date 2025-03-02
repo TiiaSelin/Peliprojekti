@@ -60,10 +60,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pkjvo"]
-radius = 37.054
+radius = 38.0132
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0yqjv"]
-radius = 50.0
+radius = 53.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 4
