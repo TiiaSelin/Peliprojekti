@@ -44,7 +44,7 @@ func _on_settings_pressed() -> void:
 	
 func _on_back_button_pressed() -> void:
 	%controls.hide()
-	%PausedMenu.show() 
+	 
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
