@@ -55,8 +55,8 @@ theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = SubResource("SystemFont_y41mi")
-theme_override_font_sizes/font_size = 68
-text = "You survived."
+theme_override_font_sizes/font_size = 78
+text = "You Win! 🏆"
 
 [node name="newgame" type="Button" parent="GridContainer"]
 layout_mode = 2
@@ -88,6 +88,6 @@ max_distance = 1e+18
 max_polyphony = 6
 panning_strength = 0.0
 
-[connection signal="pressed" from="GridContainer/newgame" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/newgame" to="." method="_on_newgame_pressed"]
+[connection signal="pressed" from="GridContainer/newgame" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]
