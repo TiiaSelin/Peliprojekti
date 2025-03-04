@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://wljcdsrx0cxg"]
+[gd_scene load_steps=10 format=3 uid="uid://wljcdsrx0cxg"]
 
 [ext_resource type="Script" path="res://scripts/paused_menu.gd" id="1_7xp5u"]
 [ext_resource type="AudioStream" uid="uid://cxwvroefj5q2n" path="res://audio/ClickSound.wav" id="2_vclkd"]
 [ext_resource type="AudioStream" uid="uid://hq3ajdbblrel" path="res://audio/pauseSound.wav" id="3_0qmat"]
 [ext_resource type="AudioStream" uid="uid://cl7w522erygje" path="res://audio/resumeSound.wav" id="4_lk0qv"]
+[ext_resource type="Texture2D" uid="uid://bhnam46b0w45g" path="res://assets/images/background/mushroombackground1.png" id="5_r5g04"]
 
 [sub_resource type="SystemFont" id="SystemFont_y41mi"]
 font_names = PackedStringArray("OCR A")
@@ -14,8 +15,18 @@ subpixel_positioning = 0
 font_names = PackedStringArray("OCR A")
 subpixel_positioning = 0
 
+[sub_resource type="SystemFont" id="SystemFont_exsit"]
+font_names = PackedStringArray("OCR A")
+font_weight = 500
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_yja2a"]
+font_names = PackedStringArray("OCR A")
+subpixel_positioning = 0
+
 [node name="PausedMenu" type="Control"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -98,6 +109,80 @@ stream = ExtResource("3_0qmat")
 process_mode = 3
 stream = ExtResource("4_lk0qv")
 
+[node name="controls" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_r5g04")
+
+[node name="Label" type="Label" parent="controls"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -257.0
+offset_top = 366.0
+offset_right = 257.0
+offset_bottom = 450.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("SystemFont_exsit")
+theme_override_font_sizes/font_size = 80
+text = "CONTROLS"
+
+[node name="Label2" type="Label" parent="controls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.5
+offset_top = -74.0
+offset_right = 806.5
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("SystemFont_exsit")
+theme_override_font_sizes/font_size = 80
+text = "Movement: WASD or arrow keys
+Shooting: Space  "
+
+[node name="BackButton" type="Button" parent="controls"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.5
+offset_top = -276.0
+offset_right = 64.5
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_yja2a")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
 [connection signal="pressed" from="GridContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="GridContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="GridContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="controls/BackButton" to="." method="_on_back_button_pressed"]
