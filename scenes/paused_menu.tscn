@@ -16,7 +16,6 @@ subpixel_positioning = 0
 
 [node name="PausedMenu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,7 +74,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = SubResource("SystemFont_ex76j")
 theme_override_font_sizes/font_size = 24
-text = "SETTINGS"
+text = "CONTROLS"
 
 [node name="quit" type="Button" parent="GridContainer"]
 layout_mode = 2
