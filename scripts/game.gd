@@ -6,6 +6,9 @@ func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
 	%PausedMenu.disable_pause()  # Estetään pause-menun käyttö ja pysäytetään peli
 	
+	await get_tree().create_timer(4.0).timeout #peli siirtyy game over -tilasta automaattisesti main menuun 4 sekunnin kuluttua
+	get_tree().paused = false  # Poistetaan peli pauselta
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	
 
 func _on_timer_timeout() -> void:
