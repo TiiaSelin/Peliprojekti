@@ -40,7 +40,6 @@ func _on_resume_pressed() -> void:
 	set_paused(false)
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/controls.tscn")
 	%controls.visible = true
 	
 func _on_back_button_pressed() -> void:
