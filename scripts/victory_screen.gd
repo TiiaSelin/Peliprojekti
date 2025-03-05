@@ -3,14 +3,21 @@ extends Control
 @onready var clickSound = $clickSound
 @onready var gameWinSound = $gameWinSound
 
+
+
 func _ready() -> void:
 	$GridContainer/quit.connect("mouse_entered", _on_button_hover)
 	$GridContainer/newgame.connect("mouse_entered", _on_button_hover)
 	connect("visibility_changed", Callable(self, "_on_visibility_changed"))
 
+
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-
+	
+func _on_newgame_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	
 func _on_button_hover() -> void:
 	clickSound.play()
 
