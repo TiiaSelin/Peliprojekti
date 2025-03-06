@@ -19,9 +19,9 @@ func _ready():
 	get_tree().paused = true
 	final_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	final_timer.start()
-	finalLevelÄäni.play()
-	taustamusiikkiStop.stop()
-	finalLevelTaustamusiikki.play()
+	finalLevelÄäni.play() # Soittaa ennen taustamusiikkia olevan äänen
+	taustamusiikkiStop.stop() # Lopettaa normaalin taustamusiikkin
+	finalLevelTaustamusiikki.play() # Aloittaa tasolle ainutlaatuisen taustamusiikkin 
 	
 
 func spawn_mob():
@@ -37,7 +37,7 @@ func _on_final_timer_timeout() -> void:
 	spawn_mob()
 
 # Audiofunktiot
-func soitaFinalLevelTaustamusiikki():
-	if not finalLevelTaustamusiikki.playing: 
-		finalLevelTaustamusiikki.play()
+func soitaFinalLevelTaustamusiikki(): 
+	if not finalLevelTaustamusiikki.playing: # Aloittaa biisin loppuessa uudestaan
+		finalLevelTaustamusiikki.play() # Soittaa biisin
 	
