@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	
 # Audiofunktiot
 func playLowHealthWarning():
-	if health <= 30 and not lowHealth.playing:
+	if health <= 30 and not lowHealth.playing: # Soita ääni, kun alle 30 helaa
 		lowHealth.play()
 func playPelaajaKuolema():
 	if health <= 1 and not pelaajaKuolema.playing:
@@ -72,7 +72,7 @@ func soitaMusiikki():
 	taustamusiikki.play()
 func _ready():
 	taustamusiikki.connect("finished", Callable(self, "_on_musiikki_finished"))
-	if not taustamusiikki.playing:
+	if not taustamusiikki.playing: # Aloita biisi uudestaan kun loppunut
 		soitaMusiikki()
 
 func _on_musiikki_finished():

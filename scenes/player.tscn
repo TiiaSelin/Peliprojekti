@@ -115,7 +115,7 @@ debug_color = Color(0.75318, 0.424213, 0.464807, 0.42)
 
 [node name="pelaajaOsuma" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_36qfr")
-volume_db = -24.266
+volume_db = -19.539
 
 [node name="lowHealth" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_isyu3")
