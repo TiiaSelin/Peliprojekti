@@ -4,7 +4,11 @@ extends CharacterBody2D
 @onready var victory_screen = get_node("/root/Game/CanvasLayer3/VictoryScreen")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var health = 50
+var health = Global.boss_health[Global.difficulty]
+
+func _ready() -> void:
+	%ProgressBar.max_value = health
+	%ProgressBar.value = health
 
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)

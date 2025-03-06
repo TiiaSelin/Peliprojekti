@@ -9,6 +9,7 @@ extends Control
 
 func _ready() -> void:
 	$Background/Back.connect("mouse_entered", _on_button_hover)
+	game_diff.text = Global.difficulty
 
 # Äänifunktiot
 func _on_button_hover() -> void:
