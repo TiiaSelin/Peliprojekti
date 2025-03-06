@@ -26,6 +26,8 @@ func _on_previous_pressed() -> void:
 		game_diff.text = "HARD"
 	else:
 		game_diff.text = "MEDIUM"
+		
+	Global.difficulty = game_diff.text
 
 
 func _on_next_pressed() -> void:
@@ -35,3 +37,5 @@ func _on_next_pressed() -> void:
 		game_diff.text = "EASY"
 	else:
 		game_diff.text = "MEDIUM"
+
+	Global.difficulty = game_diff.text
