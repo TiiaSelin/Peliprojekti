@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var player = get_node("/root/Game/Player")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-var health = 1
+var health = Global.health_values[Global.difficulty]
 
 func _physics_process(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)

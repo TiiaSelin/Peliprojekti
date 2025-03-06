@@ -1,0 +1,131 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcn4lmu2ixuh3"]
+
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_ug7ud"]
+[ext_resource type="AudioStream" uid="uid://cxwvroefj5q2n" path="res://audio/ClickSound.wav" id="2_613jf"]
+[ext_resource type="Texture2D" uid="uid://c17tjlesabvm1" path="res://assets/images/background/mushroombackhground4.png" id="5_22ewh"]
+
+[sub_resource type="SystemFont" id="SystemFont_636bs"]
+font_names = PackedStringArray("OCR A")
+font_weight = 500
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_fpgxl"]
+
+[node name="SettingsMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ug7ud")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.815686, 0.780392, 0.803922, 0.611765)
+
+[node name="clickSound" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("2_613jf")
+volume_db = -14.361
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_22ewh")
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -319.0
+offset_top = 544.0
+offset_right = 195.0
+offset_bottom = 654.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("SystemFont_636bs")
+theme_override_font_sizes/font_size = 80
+text = "DIFFICULTY:"
+
+[node name="Back" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.196
+anchor_right = 0.5
+anchor_bottom = 0.196
+offset_left = -44.0
+offset_top = 485.32
+offset_right = 79.0
+offset_bottom = 562.32
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = SubResource("SystemFont_fpgxl")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="Previous" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 147.0
+offset_top = 570.0
+offset_right = 224.0
+offset_bottom = 647.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "<"
+
+[node name="GameDiff" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 233.0
+offset_top = 581.0
+offset_right = 400.0
+offset_bottom = 650.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("SystemFont_636bs")
+theme_override_font_sizes/font_size = 40
+text = "MEDIUM"
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 411.0
+offset_top = 570.0
+offset_right = 488.0
+offset_bottom = 647.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = ">"
+
+[connection signal="pressed" from="Background/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Background/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Background/Next" to="." method="_on_next_pressed"]
